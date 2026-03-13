@@ -1,0 +1,23 @@
+{
+    "description": "private config",
+    "projectname": "balcony-garden-wechat",
+    "setting": {
+        "compileHotReLoad": true,
+        "urlCheck": false,
+        "coverView": false,
+        "lazyloadPlaceholderEnable": false,
+        "skylineRenderEnable": false,
+        "preloadBackgroundData": false,
+        "autoAudits": false,
+        "useApiHook": true,
+        "showShadowRootInWxmlPanel": true,
+        "useStaticServer": false,
+        "useLanDebug": false,
+        "showES6CompileOption": false,
+        "checkInvalidKey": true,
+        "ignoreDevUnusedFiles": true,
+        "bigPackageSizeSupport": false,
+        "useIsolateContext": true
+    },
+    "libVersion": "3.14.3"
+}

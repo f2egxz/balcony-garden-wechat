@@ -1,0 +1,39 @@
+<view class="container">
+  <view class="card form-card">
+    <view class="form-title">新建植物档案</view>
+    <view class="form-sub">仅需 1 分钟，后续提醒和统计都会自动生成。</view>
+
+    <view class="field">
+      <view class="label">植物名称</view>
+      <input class="input" placeholder="例如：阳台蓝莓" bindinput="onNameInput" />
+    </view>
+
+    <view class="field">
+      <view class="label">植物类型</view>
+      <picker mode="selector" range="{{typeOptions}}" value="{{typeIndex}}" bindchange="onTypeChange">
+        <view class="picker {{typeIndex >= 0 ? 'filled' : ''}}">{{typeIndex >= 0 ? typeOptions[typeIndex] : '请选择植物类型'}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <view class="label">花盆大小</view>
+      <picker mode="selector" range="{{potOptions}}" value="{{potIndex}}" bindchange="onPotChange">
+        <view class="picker {{potIndex >= 0 ? 'filled' : ''}}">{{potIndex >= 0 ? potOptions[potIndex] : '请选择花盆大小'}}</view>
+      </picker>
+    </view>
+
+    <view class="field">
+      <view class="label">摆放位置</view>
+      <input class="input" placeholder="例如：南阳台左侧" value="{{form.location}}" bindinput="onLocationInput" />
+    </view>
+
+    <view class="field">
+      <view class="label">入手时间</view>
+      <picker mode="date" value="{{date}}" bindchange="onDateChange">
+        <view class="picker filled">{{date}}</view>
+      </picker>
+    </view>
+
+    <button class="primary-btn submit-btn" bindtap="submit">保存植物</button>
+  </view>
+</view>

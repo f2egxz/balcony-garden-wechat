@@ -1,0 +1,9 @@
+{
+  "name": "plant",
+  "version": "1.0.0",
+  "description": "plant service",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}

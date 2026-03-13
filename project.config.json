@@ -1,0 +1,42 @@
+{
+    "miniprogramRoot": "miniprogram/",
+    "cloudfunctionRoot": "cloudfunctions/",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "enhance": true,
+        "showShadowRootInWxmlPanel": true,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "minifyWXML": true,
+        "compileHotReLoad": true,
+        "useIsolateContext": true,
+        "compileWorklet": false,
+        "uglifyFileName": false,
+        "uploadWithSourceMap": true,
+        "packNpmManually": false,
+        "localPlugins": false,
+        "disableUseStrict": false,
+        "useCompilerPlugins": false,
+        "condition": false,
+        "swc": false,
+        "disableSWC": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        }
+    },
+    "compileType": "miniprogram",
+    "appid": "wx131153282a7cd62d",
+    "projectname": "balcony-garden-wechat",
+    "libVersion": "3.14.3",
+    "simulatorPluginLibVersion": {},
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {}
+}

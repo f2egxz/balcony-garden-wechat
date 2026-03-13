@@ -1,0 +1,49 @@
+<view class="container">
+  <view class="header-card card">
+    <view class="header-top">
+      <view class="title">提醒清单</view>
+      <button class="subscribe-btn" bindtap="requestSubscribe">
+        <text class="btn-icon">🔔</text> 订阅提醒
+      </button>
+    </view>
+    <view class="header-sub">只保留今天必须做的任务，完成后自动写入记录。</view>
+
+    <view class="stats-grid">
+      <view class="stat-card overdue">
+        <view class="stat-value">{{counts.overdue}}</view>
+        <view class="stat-label">已逾期</view>
+      </view>
+      <view class="stat-card today">
+        <view class="stat-value">{{counts.today}}</view>
+        <view class="stat-label">今日待办</view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{reminders.length}}" class="reminder-list">
+    <view wx:for="{{reminders}}" wx:key="reminder_id" class="reminder-card card">
+      <view class="reminder-accent p-{{item.priority}}"></view>
+      <view class="reminder-main">
+        <view class="reminder-top">
+          <view class="plant-name">{{item.plant_name || '未命名植物'}}</view>
+          <view class="priority-badge p-{{item.priority}}">{{item.priority_text}}</view>
+        </view>
+        <view class="reminder-title">{{item.title}}</view>
+        <view class="reminder-meta">
+          <text class="action-text">{{item.action_text}}</text>
+          <text class="separator">·</text>
+          <text class="due-text">{{item.due_text}}</text>
+        </view>
+        <button class="primary-btn done-btn" data-id="{{item.reminder_id}}" bindtap="completeReminder">
+          完成这项
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="empty-state">
+    <view class="empty-icon">✨</view>
+    <view class="empty-title">今天处理完了</view>
+    <view class="empty-desc">明天会自动生成新的提醒任务，继续保持哦。</view>
+  </view>
+</view>

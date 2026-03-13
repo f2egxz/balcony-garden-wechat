@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="header card">
+    <view class="header-main">
+      <view class="header-title">我的植物</view>
+      <view class="header-sub">共 {{plants.length}} 株植物</view>
+    </view>
+    <button class="primary-btn add-btn" bindtap="goAddPlant">
+      <text class="plus">+</text> 新增
+    </button>
+  </view>
+
+  <view wx:if="{{plants.length}}" class="plant-list">
+    <view wx:for="{{plants}}" wx:key="plant_id" class="plant-card card" data-id="{{item.plant_id}}" bindtap="goDetail">
+      <view class="plant-header">
+        <view class="plant-name">{{item.plant_name}}</view>
+        <view class="plant-status {{item.status_class || 'normal'}}">{{item.status_text || '正常'}}</view>
+      </view>
+      
+      <view class="plant-info">
+        <view class="info-item">
+          <text class="info-label">类型</text>
+          <text class="info-value">{{item.plant_type || '未设置'}}</text>
+        </view>
+        <view class="info-item">
+          <text class="info-label">位置</text>
+          <text class="info-value">{{item.location || '未设置'}}</text>
+        </view>
+      </view>
+
+      <view class="plant-reminders">
+        <view class="reminder-tag water">
+          <view class="tag-icon">💧</view>
+          <text>{{item.water_text}}</text>
+        </view>
+        <view class="reminder-tag fertilize">
+          <view class="tag-icon">🧪</view>
+          <text>{{item.fertilize_text}}</text>
+        </view>
+      </view>
+
+      <view class="plant-footer">
+        <text>查看详细档案</text>
+        <view class="footer-arrow"></view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="empty">
+    <view class="empty-icon">🌿</view>
+    <view class="empty-title">还没有植物档案</view>
+    <view class="empty-desc">添加第一株植物后，系统会自动帮你生成专属养护计划。</view>
+    <button class="primary-btn empty-btn" bindtap="goAddPlant">马上添加</button>
+  </view>
+</view>

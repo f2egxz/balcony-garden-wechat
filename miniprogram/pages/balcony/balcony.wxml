@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="hero card">
+    <view class="hero-bg"></view>
+    <view class="hero-content">
+      <view class="hero-title">阳台总览</view>
+      <view class="hero-sub">你的植物状态一眼可见</view>
+
+      <view class="stats-grid">
+        <view class="stat-item total">
+          <view class="num">{{summary.total}}</view>
+          <view class="label">植物总数</view>
+        </view>
+        <view class="stat-item healthy">
+          <view class="num">{{summary.healthy}}</view>
+          <view class="label">健康状态</view>
+        </view>
+        <view class="stat-item focus">
+          <view class="num">{{summary.focus}}</view>
+          <view class="label">需关注</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-group">
+    <view class="section-title">AI 智能养护建议</view>
+    <view wx:if="{{summary.suggestions.length}}" class="suggest-list">
+      <view wx:for="{{summary.suggestions}}" wx:key="*this" class="suggest-item card">
+        <view class="suggest-icon">✨</view>
+        <text class="suggest-text">{{item}}</text>
+      </view>
+    </view>
+    <view wx:else class="empty">暂无建议，继续保持当前养护节奏。</view>
+  </view>
+
+  <view class="section-group">
+    <view class="section-title">重点关注植物</view>
+    <view wx:if="{{summary.focus_plants.length}}" class="focus-list">
+      <view wx:for="{{summary.focus_plants}}" wx:key="plant_id" class="focus-card card">
+        <view class="focus-accent"></view>
+        <view class="focus-content">
+          <view class="plant-name">{{item.plant_name}}</view>
+          <view class="focus-reason">{{item.reason}}</view>
+        </view>
+        <view class="focus-arrow"></view>
+      </view>
+    </view>
+    <view wx:else class="empty">当前没有重点关注植物</view>
+  </view>
+</view>

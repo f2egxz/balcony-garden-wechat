@@ -1,0 +1,10 @@
+{
+  "triggers": [
+    {
+      "name": "dailyReminderGenerator",
+      "type": "timer",
+      "config": "0 0 8 * * * *",
+      "argument": "{}"
+    }
+  ]
+}

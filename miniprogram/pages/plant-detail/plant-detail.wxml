@@ -1,0 +1,68 @@
+<view class="container" wx:if="{{plant}}">
+  <view class="hero-card card">
+    <view class="hero-bg"></view>
+    <view class="hero-content">
+      <view class="plant-name">{{plant.plant_name}}</view>
+      <view class="meta-row">
+        <view class="meta-badge">
+          <text class="label">品种</text>
+          <text class="value">{{plant.plant_type || '未设置'}}</text>
+        </view>
+        <view class="meta-badge">
+          <text class="label">花盆</text>
+          <text class="value">{{plant.pot_size || '未设置'}}</text>
+        </view>
+      </view>
+      <view class="detail-list">
+        <view class="detail-item">
+          <view class="item-icon">📍</view>
+          <text>位置：{{plant.location || '未设置'}}</text>
+        </view>
+        <view class="detail-item">
+          <view class="item-icon">📅</view>
+          <text>入手时间：{{plant.acquire_time || '未填写'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-title">快速操作</view>
+  <view class="action-grid">
+    <button wx:for="{{actions}}" wx:key="type" class="quick-btn" data-action="{{item.type}}" bindtap="quickRecord">
+      <view class="btn-icon">{{item.type === 'water' ? '💧' : (item.type === 'fertilize' ? '🧪' : '✂️')}}</view>
+      <text>{{item.label}}</text>
+    </button>
+    <button class="quick-btn doctor" bindtap="reportIssue">
+      <view class="btn-icon">👨‍⚕️</view>
+      <text>问AI医生</text>
+    </button>
+  </view>
+
+  <view class="section-title">养护记录</view>
+  <view wx:if="{{records.length}}" class="timeline-container card">
+    <view wx:for="{{records}}" wx:key="record_id" class="timeline-item">
+      <view class="timeline-left">
+        <view class="dot"></view>
+        <view class="line"></view>
+      </view>
+      <view class="timeline-content">
+        <view class="record-header">
+          <view class="record-title">{{item.action_text}}</view>
+          <view class="record-time">{{item.time_text}}</view>
+        </view>
+        <view class="record-note" wx:if="{{item.note}}">{{item.note}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="empty timeline-empty">
+    <view class="empty-icon">📝</view>
+    <view class="empty-text">暂无养护记录，先点上方按钮记录一次吧。</view>
+  </view>
+</view>
+
+<view wx:else class="container">
+  <view class="empty">
+    <view class="empty-icon">🔍</view>
+    <view class="empty-text">未找到植物信息</view>
+  </view>
+</view>

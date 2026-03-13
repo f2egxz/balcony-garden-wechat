@@ -1,0 +1,4 @@
+{
+  "desc": "阳台花园管家 sitemap",
+  "rules": [{ "action": "allow", "page": "*" }]
+}

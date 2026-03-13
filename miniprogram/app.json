@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/plants/plants",
+    "pages/doctor/doctor",
+    "pages/reminders/reminders",
+    "pages/balcony/balcony",
+    "pages/plant-detail/plant-detail",
+    "pages/add-plant/add-plant"
+  ],
+  "window": {
+    "navigationBarTitleText": "阳台花园管家",
+    "navigationBarBackgroundColor": "#F8FAF8",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8FAF8",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#7A8783",
+    "selectedColor": "#43A047",
+    "backgroundColor": "#FAFCF8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/plants/plants",
+        "text": "我的植物"
+      },
+      {
+        "pagePath": "pages/doctor/doctor",
+        "text": "AI医生"
+      },
+      {
+        "pagePath": "pages/reminders/reminders",
+        "text": "提醒"
+      },
+      {
+        "pagePath": "pages/balcony/balcony",
+        "text": "我的阳台"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

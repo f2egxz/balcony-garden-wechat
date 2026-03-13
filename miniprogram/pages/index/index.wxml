@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="hero card">
+    <view class="hero-content">
+      <view class="hero-top">
+        <view class="hero-tag">极简养护模式</view>
+        <view class="hero-date">{{todayText}}</view>
+      </view>
+      <view class="hero-title">先处理提醒，再看详情</view>
+      <view class="hero-sub">每天完成提醒任务，保持植物状态稳定。</view>
+      <button class="primary-btn hero-btn" bindtap="goReminders">打开提醒页</button>
+    </view>
+    <view class="hero-decoration"></view>
+  </view>
+
+  <view class="task-head">
+    <view class="section-title">今日优先任务</view>
+    <view class="task-count">{{tasks.length}} 条</view>
+  </view>
+
+  <view wx:if="{{tasks.length}}" class="task-list">
+    <view
+      wx:for="{{tasks}}"
+      wx:key="task_id"
+      class="task-item card"
+      data-plant-id="{{item.plant_id}}"
+      bindtap="handleTaskTap"
+    >
+      <view class="task-accent status-{{item.level}}"></view>
+      <view class="task-main">
+        <view class="task-plant">{{item.plant_name}}</view>
+        <view class="task-tip">{{item.tip}}</view>
+      </view>
+      <view class="task-right">
+        <view class="task-level level-{{item.level}}">{{item.level_text}}</view>
+        <view class="task-arrow">
+          <text>详情</text>
+          <view class="arrow-icon"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else class="empty">今天没有待办，继续保持。</view>
+
+  <view class="hint card">
+    <view class="hint-icon">💡</view>
+    <view class="hint-content">
+      <view class="hint-text">没有植物档案时，请先新增 1 株植物，系统会自动生成提醒。</view>
+      <view class="hint-actions">
+        <button class="ghost-btn" bindtap="goPlants">我的植物</button>
+        <button class="primary-btn" bindtap="goReminders">去提醒页</button>
+      </view>
+    </view>
+  </view>
+</view>

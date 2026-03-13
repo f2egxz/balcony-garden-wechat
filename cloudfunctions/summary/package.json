@@ -1,0 +1,9 @@
+{
+  "name": "summary",
+  "version": "1.0.0",
+  "description": "balcony summary service",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "latest"
+  }
+}
